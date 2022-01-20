@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+//El componente lo que guarda es el controller y el model
 export class AppComponent {
-  title = 'my-app';
+  title = 'Tour of Heroes';
+
 }
