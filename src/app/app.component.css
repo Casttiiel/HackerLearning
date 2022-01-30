@@ -1,0 +1,15 @@
+a{
+    background-color: #c4c8ca;
+    border-radius: 2px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 20%;
+    min-width: 70px;
+    margin: .5rem auto;
+    box-sizing: border-box;
+  
+  }
