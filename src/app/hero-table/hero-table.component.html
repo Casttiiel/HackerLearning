@@ -1,0 +1,20 @@
+
+
+
+
+
+<table>
+    <tr>
+        <th>Champion</th>
+        <th>ID</th>
+        <th>Gold</th>
+        <th>Winrate</th>
+    </tr>
+
+    <tr *ngFor="let champion of heroes"><!--Declaramos variable local "champion" y hacemos que el bucle la rellene para cada iteracion(numero heroes)-->
+        <td>{{champion.name}}</td>
+        <td>{{champion.id}}</td>
+        <td>{{champion.gold}}</td>
+        <td>{{champion.winrate}}&nbsp;%</td>
+    </tr>
+</table>
