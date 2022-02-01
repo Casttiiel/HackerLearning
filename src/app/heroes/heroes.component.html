@@ -1,10 +1,7 @@
-<h2>{{50 | currency:'EUR'}}</h2>
-
-<h2>My Heroes</h2>
 <ul class="heroes">
-  <li *ngFor="let patata of heroes" (click)="onSelect(patata)" [class.selected]="patata === selectedHero">
-    <span class="badge">{{patata.id}}</span> {{patata.name}}
+  <li *ngFor="let patata of heroes">
+    <a routerLink="/detail/{{patata.id}}">
+      <span class="badge">{{patata.id}}</span> {{patata.name}}
+    </a>
   </li>
 </ul>
-
-<app-hero-detail [selectedHero]="selectedHero"></app-hero-detail>
