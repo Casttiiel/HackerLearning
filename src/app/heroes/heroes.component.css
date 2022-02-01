@@ -5,7 +5,7 @@
     padding: 0;
     width: 15em;
   }
-  .heroes li {
+  .heroes li a li {
     cursor: pointer;
     position: relative;
     left: 0;
@@ -13,22 +13,22 @@
     margin: .5em;
     padding: .3em 0;
     height: 1.6em;
-    border-radius: 4px;
+    
   }
-  .heroes li:hover {
+  .heroes li a li:hover {
     color: #2c3a41;
     background-color: #e6e6e6;
     left: .1em;
   }
-  .heroes li.selected {
+  .heroes li a li.selected {
     background-color: black;
     color: white;
   }
-  .heroes li.selected:hover {
+  .heroes li a li.selected:hover {
     background-color: #505050;
     color: white;
   }
-  .heroes li.selected:active {
+  .heroes li a li.selected:active {
     background-color: black;
     color: white;
   }
@@ -45,8 +45,11 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+    
+  }
+  .heroes li a{
+    text-decoration: none;
+    color:black;
   }
   
-  input {
-    padding: .5rem;
-  }
+  
