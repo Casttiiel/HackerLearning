@@ -7,6 +7,5 @@ import { Component } from '@angular/core';
 })
 //El componente lo que guarda es el controller y el model
 export class AppComponent {
-  title = 'Tour of Heroes';
-
+  title = 'Tour Heroes';
 }

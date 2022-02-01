@@ -1,7 +1,18 @@
-<ul class="heroes">
-  <li *ngFor="let patata of heroes">
-    <a routerLink="/detail/{{patata.id}}">
-      <span class="badge">{{patata.id}}</span> {{patata.name}}
-    </a>
-  </li>
-</ul>
+
+
+  <h2>My Heroes</h2>
+
+
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+
+        <li>
+          <span class="badge">{{hero.id}}</span> {{hero.name}}
+
+        </li>
+      </a>
+
+    </li>
+  </ul>
+

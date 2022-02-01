@@ -22,9 +22,4 @@ describe('HeroesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should set selectedHero variable', () => {
-    component.onSelect({name: "Zeri", id: 4});
-    expect(component.selectedHero).toBeDefined();
-  });
 });

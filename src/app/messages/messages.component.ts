@@ -8,7 +8,7 @@ import { MessageService } from '../message.service';
 })
 export class MessagesComponent implements OnInit {
 
-  constructor(public messageService: MessageService) { }
+  constructor(public messageService: MessageService) {} //se declara como publica para que el html pueda acceder directamente al servicio(variables,etc)
 
   ngOnInit(): void {
   }
