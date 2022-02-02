@@ -1,10 +1,23 @@
 <div *ngIf="selectedHero">
 
     <h2>{{selectedHero.name | uppercase}} Details</h2>
+
     <div><span>id: </span>{{selectedHero.id}}</div>
+
     <div>
       <label for="hero-name">Hero name: </label>
       <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
     </div>
+
+    <div>
+      <label for="hero-gold">Hero gold: </label>
+      <input id="hero-gold" [(ngModel)]="selectedHero.gold" placeholder="gold">
+    </div>
+
+    <div>
+      <label for="hero-winrate">Hero winrate: </label>
+      <input id="hero-winrate" [(ngModel)]="selectedHero.winrate" placeholder="winrate">
+    </div>
+
   
   </div>

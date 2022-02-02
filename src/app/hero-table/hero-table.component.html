@@ -10,11 +10,27 @@
         <th>Gold</th>
         <th>Winrate</th>
     </tr>
-
+    
     <tr *ngFor="let champion of heroes"><!--Declaramos variable local "champion" y hacemos que el bucle la rellene para cada iteracion(numero heroes)-->
-        <td>{{champion.name}}</td>
+        <td><a routerLink="/detail/{{champion.id}}">{{champion.name}}</a></td>
         <td>{{champion.id}}</td>
         <td>{{champion.gold}}</td>
         <td>{{champion.winrate}}&nbsp;%</td>
+    </tr>
+
+    
+</table>
+
+<br>
+<br>
+<br>
+
+<table>
+
+    <tr *ngIf="heromaxgold"><!--Ponemos de condicion que exista heromaxgold para que nos cree la tabla-->
+        <td><a routerLink="/detail/{{heromaxgold.id}}">{{heromaxgold.name}}</a></td>
+        <td>{{heromaxgold.id}}</td>
+        <td>{{heromaxgold.gold}}</td>
+        <td>{{heromaxgold.winrate}}&nbsp;%</td>
     </tr>
 </table>
