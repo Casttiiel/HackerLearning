@@ -6,13 +6,18 @@
   <ul class="heroes">
     <li *ngFor="let hero of heroes">
       <a routerLink="/detail/{{hero.id}}">
-
         <li>
           <span class="badge">{{hero.id}}</span> {{hero.name}}
-
         </li>
       </a>
-
     </li>
+    <div *ngIf="rotationChampion">
+      {{rotationChampion.maxNewPlayerLevel}} 
+      {{rotationChampion.freeChampionIdsForNewPlayers}} 
+      {{rotationChampion.freeChampionIds}} 
+    </div>
+    <div *ngIf="championList">
+      {{championName}}
+    </div>
   </ul>
 
