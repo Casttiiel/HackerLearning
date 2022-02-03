@@ -25,12 +25,70 @@
 <br>
 <br>
 
-<table>
-
+<table>    
+    <tr *ngIf ="mediaOroHeroes">
+        <td>MediaOroHeroes</td>
+        <td>{{mediaOro}}</td>
+    </tr>
     <tr *ngIf="heromaxgold"><!--Ponemos de condicion que exista heromaxgold para que nos cree la tabla-->
         <td><a routerLink="/detail/{{heromaxgold.id}}">{{heromaxgold.name}}</a></td>
         <td>{{heromaxgold.id}}</td>
         <td>{{heromaxgold.gold}}</td>
         <td>{{heromaxgold.winrate}}&nbsp;%</td>
     </tr>
+    <tr *ngIf="minHeroGold"><!--Ponemos de condicion que exista heroMinGold para que nos cree la tabla-->
+        <td><a routerLink="/detail/{{minHeroGold.id}}">{{minHeroGold.name}}</a></td>
+        <td>{{minHeroGold.id}}</td>
+        <td>{{minHeroGold.gold}}</td>
+        <td>{{minHeroGold.winrate}}&nbsp;%</td>
+    </tr>
 </table>
+
+<div *ngIf ="heroes"><form (submit)="buscarCampeonOro(heroes)" id="buscarCampeonOro" class="form-group">
+    <input type="number "id="oroBuscado" name="oroBuscado" [ngModel] ="oroBuscado" (ngModelChange)="onOroChange($event)" placeholder="Oro" >
+    <input type="submit">
+</form>
+</div>
+<table>
+    <tr *ngIf ="primerCampeonEncontrado">
+        {{primerCampeonEncontrado.name}}
+    </tr>
+</table>
+
+<div *ngIf ="heroes">
+    <form (submit)="buscarCampeonOroMedio(heroes)" id="buscarCampeonOro" class="form-group">
+        <input type="number "id="oroBuscadoMax" name="oroBuscadoMax" [ngModel] ="oroBuscadoMax" (ngModelChange)="onOroChangeMax($event)" placeholder="Oro Maximo" >
+        <input type="number "id="oroBuscadoMin" name="oroBuscadoMin" [ngModel] ="oroBuscadoMin" (ngModelChange)="onOroChangeMin($event)" placeholder="Oro Minimo" >
+        <input type="submit">
+    </form>
+</div>
+<table>
+    <tr *ngFor="let entreMedio of campeonEntreMedio">
+        <td><a routerLink="/detail/{{entreMedio.id}}">{{entreMedio.name}}</a></td>
+        <td>{{entreMedio.id}}</td>
+        <td>{{entreMedio.gold}}</td>
+        <td>{{entreMedio.winrate}}&nbsp;%</td>
+    </tr>
+</table>
+
+<div *ngIf ="heroes">
+    <form (submit)="letZeri(heroes)" id="cosasZeris" class="form-group">
+        <input type="submit" value = "letZeri">
+    </form>
+</div>
+<table>
+    <tr *ngFor="let Zeris of listaZeri">
+        <td><a routerLink="/detail/{{Zeris.id}}">{{Zeris.name}}</a></td>
+        <td>{{Zeris.id}}</td>
+        <td>{{Zeris.gold}}</td>
+        <td>{{Zeris.winrate}}&nbsp;%</td>
+    </tr>
+</table>
+
+<form (submit)="calcularDNI()" id="buscarDNI" class="form-group">
+    <input type="number" name="numerosDNI"  [ngModel] ="numerosDNI" (ngModelChange)="onNumeroChange($event)" id="numerosDNI">
+    <input type="submit" value = "calcularDNI">
+</form>
+<div *ngIf="DNI">
+    {{DNI.numeros}}
+</div>
