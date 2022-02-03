@@ -48,26 +48,38 @@ import { NgIf } from '@angular/common';
         return heroMinGold;  
     }
 
-    oroMayorQue(valor :Number,heroes:Hero[]): Hero{//A MEDIO HACER. NO TOCAR 
-
+    oroMayorQue(valor :Number,heroes:Hero[]): Hero{
+    //
         
         var Tomatoe:Hero ={id:404,name:"error", gold:-Infinity,winrate:0};
-
         var i=0;
 
-       do{
+        do{
 
-        if(heroes[i].gold>valor){
-            var Tomatoe = heroes[i]
-            
-        }
-
-        i++;
+            if(heroes[i].gold>valor){
+                var Tomatoe = heroes[i]
+                
+            }
+            i++;
        }while(Tomatoe.gold>valor || i<heroes.length );
 
        return Tomatoe;
     }
+    heroesCorrectos:Hero[]=[]; //Declaramos la lista como vacia en lugar de undefined para poder añadir todos los elementos que queramos sin definirla previamente.
 
-    oroComprendido(minimo:Number,maximo:Number,heroes:Hero[]){}
+    oroComprendido(minimo:Number,maximo:Number,heroes:Hero[]):Hero[]{
+        //UN BUCLE QUE RECORRA TODOS LOS HEROES A LA VEZ QUE COMPARA SU .GOLD Y SI CUMPLE LA CONDICION --> GUARDA ESE HEROE EN LA VARIABLE HERO[]
+        for(var i=0;i<heroes.length;i++){
+            if(heroes[i].gold<maximo && heroes[i].gold>minimo){
+                this.heroesCorrectos.push(heroes[i]);
+            }
+        }
+        return this.heroesCorrectos;
+    }
 
+
+    calculadoraDNI(DNI:Number){
+
+        
+    }
   }
