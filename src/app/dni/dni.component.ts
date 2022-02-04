@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LetraDNI } from '../estructura-dni';
 
 @Component({
   selector: 'app-dni',
@@ -8,30 +9,26 @@ import { Component, OnInit } from '@angular/core';
 export class DNIComponent implements OnInit {
 
   constructor() { }
-
+  numero:number=0;
+  respuesta:string="";
   ngOnInit(): void {
+    
   }
 
-  calculadoraDNI(valor:Number):string{
+  calculadoraDNI(valor:number):void{
+   
+    var comprobacion=Number.isInteger(valor);
     
-    var comprobacion:Boolean=Number.isInteger(valor);
-    var respuesta:string;
-    var division:Number=Number(valor)/23; //He tenido que castear el parametro introducido "valor" como Number otra vez. No entiendo mucho por que. Si no lo hacia asi me daba error
-    var comprobacion2:Boolean=Number.isInteger(division);// esta variable quizas es rizar el rizo, ya lo mirare mejor mañana.
+    var resto= valor % 23;
+    var letra=["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
 
-    if(comprobacion=false || valor>99999999 || valor<1 ){//REVISAMOS SI A ALGUIEN NO LE DA LA GANA DE PONER BIEN SU NUMERO DE DNI
+    if(comprobacion==false || valor>99999999 || valor<1 ){//REVISAMOS SI A ALGUIEN NO LE DA LA GANA DE PONER BIEN SU NUMERO DE DNI
 
-      return respuesta="El numero introducido no pertenece a ningun numero perteneciente al sistema DNI. Este numero ha de constar de 8 digitos. No puede ser ni negativo, ni presentar mas de 8 digitos ni ser decimal. Por favor, vuelva a introducir el numero "
+       this.respuesta="El numero introducido no pertenece a ningun numero perteneciente al sistema DNI. Este numero ha de constar de 8 digitos. No puede ser ni negativo, ni presentar mas de 8 digitos ni ser decimal. Por favor, vuelva a introducir el numero "
 
     };
-
-    if(comprobacion2=true){return respuesta="La letra correspondiente a su DNI es la letra T"};
-
-    if(comprobacion2=false){
-
-      //TRABAJAR CON LOS DECIMALES. AQUI ES DONDE EL CODIGO LO PUEDO REVOLVER MUCHO Y REINVENTARME LA PROGRAMACION. OS EXPLICO EL APPROACH MAÑANA
-    }
-    return respuesta="placeholder";// NO SE SI UTILIZANDO UN IF ELSE ME LIBRARIA DE TENER QUE PONER UN RETURN AQUI.
+      
+     this.respuesta="La letra que corresponde a su numero de DNI es:"+letra[resto];
     
   }
 
