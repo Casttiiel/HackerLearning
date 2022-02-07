@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <td>Nombre</td>
+        <td>ID</td>
+        <td>Título</td>
+        <td>Imagen</td>
+    </tr>
+
+    <tr *ngFor="let champion of lolchampions">
+        <td>{{champion.name}}</td>
+        <td>{{champion.id}}</td>
+        <td>{{champion.title}}</td>
+        <td>{{champion.img}}</td>
+    </tr>
+
+</table>
