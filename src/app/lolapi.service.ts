@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { ChampionRotation } from './ChampionRotation';
+import { ChampionRotation } from './champion-rotation';
 import { SummonerData } from './SummonerData';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class LolAPIService {
   constructor(private http: HttpClient) { }
 
   server: string = "https://euw1.api.riotgames.com";
-  key: string = "";
+  key: string = "RGAPI-9a2ae0e7-fe11-4aa1-a0fd-45a28ccbecd0";
 
   //TODO Moverlo a un servicio helper
   getData(url: string, sessionStorageKey?: string) :Observable<any> {
@@ -37,6 +37,10 @@ export class LolAPIService {
 
   getUserData(userName: string): Observable<SummonerData>{
     return this.getData(this.server + "/lol/summoner/v4/summoners/by-name/"+ userName);
+  }
+
+  clearData(): void{
+    sessionStorage.clear();
   }
 
 }
