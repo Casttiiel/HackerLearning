@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ChampionRotation } from './champion-rotation';
 import { SummonerData } from './SummonerData';
+import { LolChampions } from './lol-champions';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,9 @@ export class LolAPIService {
     return this.getData(this.server + "/lol/platform/v3/champion-rotations", "championRotation");
   }
 
+  getChampions():Observable<LolChampions>{
+    return this.getData("http://ddragon.leagueoflegends.com/cdn/12.3.1/data/en_US/champion.json","Champions");
+  }
   getUserData(userName: string): Observable<SummonerData>{
     return this.getData(this.server + "/lol/summoner/v4/summoners/by-name/"+ userName);
   }
