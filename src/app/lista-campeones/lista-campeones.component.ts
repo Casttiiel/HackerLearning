@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
 import { LolAPIService } from '../lolapi.service';
-import { LolChampions } from '../lol-champions';
+import { ChampionData } from '../Champion-data';
 
 @Component({
   selector: 'app-lista-campeones',
@@ -12,11 +10,11 @@ import { LolChampions } from '../lol-champions';
 export class ListaCampeonesComponent implements OnInit {
 
   constructor(private lolApiService: LolAPIService) { }
-  lolchampions: LolChampions[]=[];
+  datos:ChampionData[]= [];
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.lolApiService.getChampions().subscribe(data =>{
-     this.lolchampions= data; 
+      this.datos= Object.values(data.data);
     });
 
   }

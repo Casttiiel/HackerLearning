@@ -1,6 +1,6 @@
 export interface LolChampions {
-    name: string;
-    id: number;
-    title: string;
-    img: number;
+    data:any;
+    format:string;
+    type: string;
+    version:string;
   }

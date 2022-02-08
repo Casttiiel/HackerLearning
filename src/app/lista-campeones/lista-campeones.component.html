@@ -6,11 +6,11 @@
         <td>Imagen</td>
     </tr>
 
-    <tr *ngFor="let champion of lolchampions">
+   <tr *ngFor="let champion of datos">
         <td>{{champion.name}}</td>
-        <td>{{champion.id}}</td>
+        <td>{{champion.key}}</td>
         <td>{{champion.title}}</td>
-        <td>{{champion.img}}</td>
-    </tr>
+        <td><img height="{{champion.image.h}}" width="{{champion.image.w}}" src="http://ddragon.leagueoflegends.com/cdn/12.3.1/img/champion/{{champion.image.full}}"></td>
+    </tr> 
 
 </table>
