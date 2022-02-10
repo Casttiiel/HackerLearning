@@ -1,0 +1,27 @@
+<table>
+    <th>FREE ROTATION CHAMPIONS</th>
+    <tr>
+        <td>Name</td>
+        <td>Title</td>
+        <td>Image</td>
+    </tr>
+    <tr *ngFor="let champion of finalChampions">
+        <td>{{champion.name}}</td>
+        <td>{{champion.title}}</td>
+        <td><img height="{{champion.image.h}}" width="{{champion.image.w}}" src="http://ddragon.leagueoflegends.com/cdn/12.3.1/img/champion/{{champion.image.full}}"></td>
+    </tr>
+</table>
+
+<table>
+    <th> LOW LEVEL FREE ROTATION CHAMPIONS</th>
+    <tr>
+        <td>Name</td>
+        <td>Title</td>
+        <td>Image</td>
+    </tr>
+    <tr *ngFor="let champion of lowFinalChampions">
+        <td>{{champion.name}}</td>
+        <td>{{champion.title}}</td>
+        <td><img height="{{champion.image.h}}" width="{{champion.image.w}}" src="http://ddragon.leagueoflegends.com/cdn/12.3.1/img/champion/{{champion.image.full}}"></td>
+    </tr>
+</table>

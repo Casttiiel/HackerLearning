@@ -5,11 +5,13 @@ import { ListaCampeonesComponent } from './lista-campeones/lista-campeones.compo
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyInterceptor } from './http-interceptor';
+import { FreeRotationComponent } from './free-rotation/free-rotation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaCampeonesComponent
+    ListaCampeonesComponent,
+    FreeRotationComponent
   ],
   imports: [
     BrowserModule,
