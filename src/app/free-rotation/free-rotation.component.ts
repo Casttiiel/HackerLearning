@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LolAPIService } from '../lolapi.service';
 import { ChampionData } from '../champion-data';
-import { LolChampions } from '../lol-champions';
+
 @Component({
   selector: 'app-free-rotation',
   templateUrl: './free-rotation.component.html',
@@ -13,8 +13,6 @@ export class FreeRotationComponent implements OnInit {
 
   data:ChampionData[]=[];
   key:String="";
-  keyNumber:Number[]=[];
-  lowKeyNumber:Number[]=[];
   finalChampions:ChampionData[]=[];
   lowFinalChampions:ChampionData[]=[];
 
@@ -26,24 +24,22 @@ export class FreeRotationComponent implements OnInit {
       this.data=Object.values(datos.data);
 
       this.lolApiService.getChampionRotation().subscribe(datos2=>{
-        this.keyNumber=Object.values(datos2.freeChampionIds);
-        this.lowKeyNumber=Object.values(datos2.freeChampionIdsForNewPlayers);
+       
 
         for(var i=0;i<this.data.length;i++){
           
           this.key=this.data[i].key;
           
-          for(var j=0;j<this.keyNumber.length;j++){
+          for(var j=0;j<Object.values(datos2.freeChampionIds).length;j++){
             
-            if(Number(this.key)===this.keyNumber[j]){
-              //HACER ALGO QUE NO HE PROCESADO AUN EN LA CABEZA
+            if(Number(this.key)===Object.values(datos2.freeChampionIds)[j]){
               
               this.finalChampions.push(this.data[i]);
             }
           }
-          for(var k=0;k<this.lowKeyNumber.length;k++){
-            if(Number(this.key)===this.lowKeyNumber[k]){
-              //HACER ALGO QUE NO HE PROCESADO AUN EN LA CABEZA
+          for(var k=0;k<Object.values(datos2.freeChampionIdsForNewPlayers).length;k++){
+            if(Number(this.key)===Object.values(datos2.freeChampionIdsForNewPlayers)[k]){
+              
               this.lowFinalChampions.push(this.data[i]);
             }
           }  
