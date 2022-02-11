@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LolAPIService } from '../lolapi.service';
-import { ChampionData } from '../Champion-data';
+import { ChampionData } from '../champion-data';
 
 @Component({
   selector: 'app-lista-campeones',
