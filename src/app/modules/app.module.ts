@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from '../app.component';
 import { MyInterceptor } from '../http-interceptor';
-import { FreeRotationComponent } from '../free-rotation/free-rotation.component';
-import { ListaCampeonesComponent } from '../lista-campeones/lista-campeones.component';
+import { FreeRotationComponent } from '../components/free-rotation/free-rotation.component';
+import { ListaCampeonesComponent } from '../components/lista-campeones/lista-campeones.component';
 
 
 @NgModule({
