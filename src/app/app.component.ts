@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LolAPIService } from './lolapi.service'
+import { LolAPIService } from './services/lolapi.service'
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,7 @@ export class AppComponent {
   constructor(private lolAPI: LolAPIService){}
 
   ngOnInit() {
+    this.lolAPI.clearData();
     this.lolAPI.getChampionRotation().subscribe(data => {
       //Hago mis cosas
       

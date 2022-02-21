@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LolAPIService } from './lolapi.service';
+import { LolAPIService } from './services/lolapi.service';
 
 @Injectable()
 export class MyInterceptor implements HttpInterceptor {

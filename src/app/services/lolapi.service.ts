@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { ChampionRotation } from './champion-rotation';
-import { SummonerData } from './SummonerData';
+import { ChampionRotation } from '../interfaces/champion-rotation';
+import { SummonerData } from '../interfaces/summoner-data';
 
 @Injectable({
   providedIn: 'root'
