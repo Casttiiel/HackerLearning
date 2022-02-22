@@ -14,7 +14,7 @@ export class LolAPIService {
   constructor(private http: HttpClient) { }
 
   server: string = "https://euw1.api.riotgames.com";
-  key: string = "";
+  key: string = "RGAPI-b8925751-e90c-474e-ad23-d380cfa45925";
 
   //TODO Moverlo a un servicio helper
   getData(url: string, sessionStorageKey?: string) :Observable<any> {

@@ -24,13 +24,13 @@ export class FreeRotationComponent implements OnInit {
         var key : String = "";
         for(var i = 0; i < data.length; i++){
           key = data[i].key;
-          for(var j=0; j < Object.values(datos2.freeChampionIds).length; j++){
-            if(Number(key) === Object.values(datos2.freeChampionIds)[j]){
+          for(var j=0; j < datos2.freeChampionIds.length; j++){
+            if(Number(key) === datos2.freeChampionIds[j]){
               this.finalChampions.push(data[i]);
             }
           }
-          for(var k = 0; k < Object.values(datos2.freeChampionIdsForNewPlayers).length; k++){
-            if(Number(key) === Object.values(datos2.freeChampionIdsForNewPlayers)[k]){
+          for(var k = 0; k < datos2.freeChampionIdsForNewPlayers.length; k++){
+            if(Number(key) === datos2.freeChampionIdsForNewPlayers[k]){
               this.lowFinalChampions.push(data[i]);
             }
           }

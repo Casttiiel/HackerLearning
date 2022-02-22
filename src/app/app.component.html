@@ -1,2 +1,33 @@
 
-<app-free-rotation></app-free-rotation>
+
+<div> <!-- div para la imagen de fondo-->
+    <nav class="nav justify-content-center bg-dark pdg-b-50 pdg-t-50" >
+        
+        
+        <a class="mrg-l-10 mrg-r-10 " routerLink="/home"><img src="http://ddragon.leagueoflegends.com/cdn/6.8.1/img/map/map11.png" width="50" height="50"></a>
+        
+        <button class="btn btn-secondary dropdown-toggle mrg-l-10 mrg-r-10 " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Challenges
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" routerLink="/home">opgg</a></li>
+            <li><a class="dropdown-item" routerLink="/home">Reto</a></li>
+            
+        </ul>
+        
+        <button routerLink= "/Champions" type="button" class="btn btn-outline-success mrg-l-10 mrg-r-10 ">Champions</button>
+    
+        <button   routerLink="/FreeRotation" type="button" class="btn btn-outline-success mrg-l-10 mrg-r-10 ">Champion Rotation</button>
+       
+    </nav>
+    <router-outlet></router-outlet>
+    <div>
+        <h1>Terms of use</h1>
+        <h1>Contact us</h1>
+        <h1>FAQ</h1>
+        
+    <!-- pongo h de placeholders, seran links en el futuro-->
+    </div>
+</div>
+
+
